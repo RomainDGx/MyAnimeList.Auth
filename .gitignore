@@ -1,0 +1,10 @@
+# Visual Studio
+
+.vs/
+[Bb]in/
+[Oo]bj/
+
+# ASP.NET
+
+launchSettings.json
+appsettings.Development.json
