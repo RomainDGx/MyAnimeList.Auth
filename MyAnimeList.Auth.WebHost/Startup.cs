@@ -20,9 +20,9 @@ namespace MyAnimeList.Auth.WebHost
         {
             services.Configure<AuthService.AuthServiceOptions>( options =>
             {
-                options.ClientId = _configuration.GetValue<string>( "AuthService:ClientId" );
-                options.ClientSecret = _configuration.GetValue<string>( "AuthService:ClientSecret" );
-                options.AuthServer = new Uri( _configuration.GetValue<string>( "AuthService:AuthServer" ) );
+                options.ClientId = _configuration.GetValue<string>("AuthService:ClientId") ?? default!;
+                options.ClientSecret = _configuration.GetValue<string>( "AuthService:ClientSecret" ) ?? default!;
+                options.AuthServer = new Uri( _configuration.GetValue<string>( "AuthService:AuthServer" ) ?? default! );
                 options.RedirectUri = _configuration.GetValue<string>( "AuthService:RedirectUri" );
             } );
             services.AddScoped( typeof( AuthService ) );
